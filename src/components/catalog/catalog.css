@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+/* font-family: 'Roboto', sans-serif; */
+
+.catalog {
+    height: 877px;
+    width: 375px;
+    background-color: black;
+}
+
+header {
+    height: 67px;
+    width: 100%;
+    background-color: #C3CFD9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #E8833A;
+}
+
+main {
+    height: 810px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageTitle {
+    display: flex;
+
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #293845;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.movieList {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+img {
+    margin-bottom: 11px;
+    border: 8px solid #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 0px 2px 4px 2px #0000001A;
+}
