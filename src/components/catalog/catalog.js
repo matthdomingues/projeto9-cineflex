@@ -1,6 +1,18 @@
-import teste from "./teste.png"
+import React from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
-export default function Catalog() {
+
+export default function Catalog(props) {
+
+    const { setMovieId } = props;
+
+    const [movieURL, setMovieURL] = React.useState([])
+
+    React.useEffect(() => {
+        const promise = axios.get(baseURL)
+        promise.then(response => { setMovieURL(response.data) })
+    }, []);
 
     return (
         <div className="catalog">
@@ -13,17 +25,15 @@ export default function Catalog() {
                 </div>
                 <br />
                 <div className="movieList">
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
-                    <img src={teste} />
+                    {movieURL.map(value =>
+                        <Link to={`/sessoes/${value.id}`}>
+                            <img onClick={() => setMovieId(value.id)} src={value.posterURL} />
+                        </Link>)}
                 </div>
             </main>
         </div >
     )
 
 }
+
+const baseURL = "https://mock-api.driven.com.br/api/v5/cineflex/movies";
