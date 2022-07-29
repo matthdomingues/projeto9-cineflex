@@ -1,11 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export default function Catalog(props) {
 
-    const { setMovieId } = props;
+    const params = useParams();
+
+    const { setMovieId, setMovieSession, movieSession } = props;
 
     const [movieURL, setMovieURL] = React.useState([])
 
@@ -15,7 +17,7 @@ export default function Catalog(props) {
     }, []);
 
     return (
-        <div className="catalog">
+        <div className="catalogBody">
             <header>
                 <h1>CINEFLEX</h1>
             </header>

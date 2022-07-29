@@ -2,7 +2,7 @@
 
 /* font-family: 'Roboto', sans-serif; */
 
-.catalog {
+.showtimesBody {
     height: 877px;
     width: 375px;
     background-color: white;
@@ -27,7 +27,7 @@ h1 {
     color: #E8833A;
 }
 
-main {
+.showtimesBody main {
     height: 693px;
     width: 100%;
     background-color: white;
@@ -37,7 +37,7 @@ main {
     overflow-y: scroll;
 }
 
-h2 {
+.showtimesBody h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -45,7 +45,7 @@ h2 {
     letter-spacing: 0.04em;
     text-align: center;
     color: #293845;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-left: 70px;
     margin-bottom: 30px;
     box-sizing: border-box;
@@ -67,7 +67,7 @@ h2 {
     margin-bottom: 23px;
 }
 
-h3 {
+.movieDays h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -94,7 +94,7 @@ h3 {
     margin-right: 8px;
 }
 
-h4 {
+.movieShowtimes h4 {
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -104,17 +104,17 @@ h4 {
     color: white;
 }
 
-footer {
+.showtimesBody footer {
     display: flex;
     height: 117px;
     width: 375px;
-    background-color: #C3CFD9;
-    border: 1px solid #9EADBA;
+    background-color: #DFE6ED;
+    border-top: 1px solid #9EADBA;
     align-items: center;
 
 }
 
-footer img {
+.showtimesBody footer img {
     height: 72px;
     width: 48px;
     margin-bottom: 11px;
@@ -124,7 +124,7 @@ footer img {
     margin-left: 10px;
 }
 
-h5 {
+.showtimesBody footer h5 {
     margin-left: 12px;
     font-family: 'Roboto', sans-serif;
     font-size: 26px;

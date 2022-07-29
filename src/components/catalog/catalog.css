@@ -2,7 +2,7 @@
 
 /* font-family: 'Roboto', sans-serif; */
 
-.catalog {
+.catalogBody {
     height: 877px;
     width: 375px;
     background-color: white;
@@ -27,7 +27,7 @@ h1 {
     color: #E8833A;
 }
 
-main {
+.catalogBody main {
     height: 810px;
     width: 100%;
     background-color: white;
@@ -36,14 +36,14 @@ main {
     align-items: center;
 }
 
-.pageTitle {
+.catalogBody .pageTitle {
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
-h2 {
+.catalogBody .pageTitle h2 {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 400;
@@ -65,7 +65,7 @@ h2 {
     overflow-y: scroll;
 }
 
-img {
+.movieList img {
     height: 193px;
     width: 129px;
     margin-bottom: 11px;
