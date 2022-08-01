@@ -101,7 +101,7 @@ export default function Seats(props) {
                         <h3>Nome do comprador:</h3>
                         <input type="text" onChange={(event) => setName(event.target.value)} placeholder="Digite seu nome..." value={name} required ></input>
                         <h3>CPF do comprador:</h3>
-                        <input type="number" onChange={(event) => setCPF(event.target.value)} placeholder="Digite seu CPF..." value={CPF} required maxlength="11" ></input>
+                        <input type="text" onChange={(event) => setCPF(event.target.value)} placeholder="Digite seu CPF..." value={CPF} required maxlength="11"></input>
                         <button type="submit">Reservar assento(s)</button>
                     </form>
                 </div>
