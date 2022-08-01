@@ -14,7 +14,7 @@ export default function Seats(props) {
     const { movieSession, setSessionInfo, sessionInfo } = props;
     const [movieData, setMovieData] = React.useState([]);
     const [movieSeat, setMovieSeat] = React.useState(null);
-    const [reserved, setReserved] = React.useState([]);
+    const [reservedID, setReservedID] = React.useState([]);
     const [reservedNumber, setReservedNumber] = React.useState([]);
 
     React.useEffect(() => {
@@ -25,7 +25,7 @@ export default function Seats(props) {
     function isNotNull() {
         if (movieSeat !== null) {
             return movieSeat.map(value => <Seat
-                id={value.id} number={value.name} available={value.isAvailable} reserved={reserved} setReserved={setReserved} reservedNumber={reservedNumber} setReservedNumber={setReservedNumber}
+                id={value.id} number={value.name} available={value.isAvailable} reservedID={reservedID} setReservedID={setReservedID} reservedNumber={reservedNumber} setReservedNumber={setReservedNumber}
             />)
         }
     }
@@ -46,10 +46,13 @@ export default function Seats(props) {
             });
 
         let requestPost = {
-            ids: reservedNumber,
+            ids: reservedID,
             name: `${name}`,
             cpf: `${CPF}`
         };
+
+        console.log(requestPost)
+
         const request = axios.post("https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many", requestPost);
 
         request.then(() => {
@@ -60,7 +63,7 @@ export default function Seats(props) {
                 name: "",
                 cpf: ""
             };
-            if (reservedNumber.length > 0) {
+            if (reservedID.length > 0) {
                 navigate('/sucesso');
             } else {
                 alert('Você precisa escolher ao menos uma poltrona para realizar o pedido!')
@@ -68,8 +71,6 @@ export default function Seats(props) {
         })
         request.catch(() => alert('Opa, algo inesperado aconteceu!'));
     }
-
-
 
     return (
         <div className="seatsBody">
@@ -100,7 +101,7 @@ export default function Seats(props) {
                         <h3>Nome do comprador:</h3>
                         <input type="text" onChange={(event) => setName(event.target.value)} placeholder="Digite seu nome..." value={name} required ></input>
                         <h3>CPF do comprador:</h3>
-                        <input type="number" onChange={(event) => setCPF(event.target.value)} placeholder="Digite seu CPF..." value={CPF} required ></input>
+                        <input type="number" onChange={(event) => setCPF(event.target.value)} placeholder="Digite seu CPF..." value={CPF} required maxlength="11" ></input>
                         <button type="submit">Reservar assento(s)</button>
                     </form>
                 </div>

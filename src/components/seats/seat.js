@@ -5,15 +5,15 @@ export default function Seat(props) {
     const [choose, setChoose] = useState('seatGrey');
     const [select, setSelect] = useState(true);
 
-    const { id, number, available, reserved, setReserved, reservedNumber, setReservedNumber } = props;
+    const { id, number, available, reservedID, setReservedID, reservedNumber, setReservedNumber } = props;
 
     function selectSeat(text) {
         if (text === false) {
             setChoose('seatGrey');
             setSelect(true);
-            for (let i = 0; i < reserved.length; i = i + 1) {
-                if (reserved[i] === id) {
-                    reserved.splice(i, 1);
+            for (let i = 0; i < reservedID.length; i = i + 1) {
+                if (reservedID[i] === id) {
+                    reservedID.splice(i, 1);
                 }
                 if (reservedNumber[i] === number) {
                     reservedNumber.splice(i, 1);
@@ -22,7 +22,7 @@ export default function Seat(props) {
         } else if (text === true) {
             setChoose('seatGreen');
             setSelect(false);
-            setReserved([...reserved, id]);
+            setReservedID([...reservedID, id]);
             setReservedNumber([...reservedNumber, number]);
         }
     }
