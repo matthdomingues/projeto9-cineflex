@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
+
+.requestBody {
+    height: 877px;
+    width: 375px;
+    background-color: white;
+}
+
+header {
+    height: 67px;
+    width: 100%;
+    background-color: #C3CFD9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #E8833A;
+}
+
+.requestBody main {
+    height: 810px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.requestTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    width: 170px;
+}
+
+.requestTitle h2 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #247A6B;
+}
+
+.requestMovie,
+.requestSeat {
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.requestMovie h3,
+.requestSeat h3,
+.requestInfo h3 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: left;
+    letter-spacing: 0.04em;
+    color: #293845;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.requestMovie h4,
+.requestSeat h4,
+.requestInfo h4 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26px;
+    display: flex;
+    align-items: left;
+    letter-spacing: 0.04em;
+    color: #293845;
+}
+
+.requestBody button {
+    width: 225px;
+    height: 42px;
+    background: #E8833A;
+    border-radius: 3px;
+    border: 1px #E8833A;
+    margin-right: 50px;
+    box-sizing: border-box;
+}
+
+.requestBody h5 {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+}

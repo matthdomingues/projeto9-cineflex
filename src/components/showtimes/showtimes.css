@@ -2,6 +2,10 @@
 
 /* font-family: 'Roboto', sans-serif; */
 
+a {
+    text-decoration: none;
+}
+
 .showtimesBody {
     height: 877px;
     width: 375px;
@@ -102,6 +106,7 @@ h1 {
     letter-spacing: 0.02em;
     text-align: center;
     color: white;
+    text-decoration: none;
 }
 
 .showtimesBody footer {

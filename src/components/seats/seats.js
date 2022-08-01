@@ -1,33 +1,39 @@
 import axios from "axios";
 import React from "react";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
+import Seat from "./seat";
 
 export default function Seats(props) {
 
-    const { movieSession, movieId, movieSessionId } = props;
-    const [movieData, setMovieData] = React.useState([]);
-    const [movieSeat, setMovieSeat] = React.useState([]);
+    const params = useParams();
+    const navigate = useNavigate();
 
-    // api para extrair os assentos
+    const { movieSession } = props;
+    const [movieData, setMovieData] = React.useState([]);
+
     React.useEffect(() => {
-        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${movieId}/seats`)
-        promise.then(response => { setMovieSeat(response.data.seats) })
-        promise.then(response => { setMovieData(response.data.movie) })
+        const promise = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${params.idSessao}/seats`)
+        promise.then(response => {
+            setMovieData(response.data.movie)
+        })
     }, []);
 
-    console.log(movieSeat);
+    //const [name, setName] = useState('')
+    //const [cpf, setCpf] = useState('')
+    //const [form, setForm] = useState({ ids: '', name: '', cpf: '' })
 
-    function Seat() {
-        return (
-            <>
-                {movieSeat.map(value =>
-                    <div className="seat">
-                        <h6>{value.name}</h6>
-                    </div>
-                )}
-            </>
-        )
-    }
+    /* function handleForm(event) {
+        event.preventDefault();
+        setForm = { ...form, name, cpf }
+
+        // const promise = axios.post("https://mock-api.driven.com.br/api/v7/cineflex/seats/book-many", form )
+        // navigate("/sucesso")
+
+        console.log(form);
+        setName('');
+        setCpf('');
+    } */
 
     return (
         <div className="seatsBody">
@@ -41,26 +47,26 @@ export default function Seats(props) {
                 </div>
                 <div className="seatExemplification">
                     <div className="seatSelected">
-                        <div className="seatGreen"></div>
+                        <div className="seatDemoGreen"></div>
                         <p>Selecionado</p>
                     </div>
                     <div className="seatAvailable">
-                        <div className="seatGrey"></div>
+                        <div className="seatDemoGrey"></div>
                         <p>Disponível</p>
                     </div>
                     <div className="seatUnavailable">
-                        <div className="seatYellow"></div>
+                        <div className="seatDemoYellow"></div>
                         <p>Indisponível</p>
                     </div>
                 </div>
                 <div className="userInfo">
-                    <form>
+                    {/* { <form onSubmit={handleForm}> }
                         <h3>Nome do comprador:</h3>
-                        <input placeholder="Digite seu nome..."></input>
+                        <input type="text" onChange={(event) => setName(event.target.value)} placeholder="Digite seu nome..." value={name} required ></input>
                         <h3>CPF do comprador:</h3>
-                        <input placeholder="Digite seu CPF..." ></input>
+                        <input type="number" onChange={(event) => setCpf(event.target.value)} placeholder="Digite seu CPF..." value={cpf} required ></input>
                         <button type="submit">Reservar assento(s)</button>
-                    </form>
+                    </form>*/ }
                 </div>
             </main>
             <footer>
@@ -73,16 +79,3 @@ export default function Seats(props) {
         </div >
     )
 }
-
-const Assento = styled.div`
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 26px;
-    height: 26px;
-    background: #C3CFD9;
-    border: 1px solid #808F9D;
-    border-radius: 12px;
-
-`

@@ -1,9 +1,12 @@
 import axios from "axios";
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 export default function Showtimes(props) {
+
+    const params = useParams();
+    console.log(params);
 
     const { movieId, setMovieSession, setMovieSessionId } = props;
 
@@ -29,11 +32,11 @@ export default function Showtimes(props) {
                             <div className="movieDay">
                                 <h3>{value.weekday} - {value.date}</h3>
                                 <div className="movieShowtimes">
-                                    <Link to={`/assentos/${value.id}`}> <div onClick={() => {
+                                    <Link to={`/assentos/${value.showtimes[0].id}`}> <div onClick={() => {
                                         setMovieSession(`${value.weekday} - ${value.showtimes[0].name}`);
                                         setMovieSessionId(value.id)
                                     }} className="movieHour"><h4>{value.showtimes[0].name}</h4></div> </Link>
-                                    <Link to={`/assentos/${value.id}`}>  <div onClick={() => {
+                                    <Link to={`/assentos/${value.showtimes[1].id}`}>  <div onClick={() => {
                                         setMovieSession(`${value.weekday} - ${value.showtimes[1].name}`);
                                         setMovieSessionId(value.id)
                                     }} className="movieHour"><h4>{value.showtimes[1].name}</h4></div> </Link>
